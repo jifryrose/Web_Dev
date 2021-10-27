@@ -7,6 +7,27 @@
         button{
             align-items: center;
         }
+	video::-webkit-media-controls-fullscreen-button {
+                display: none;
+            }
+            video::-webkit-media-controls-play-button {
+                display: none;
+            }
+            video::-webkit-media-controls-timeline {
+                display: none;
+            }
+            video::-webkit-media-controls-current-time-display{
+                display: none;
+            }
+            video::-webkit-media-controls-time-remaining-display {
+                display: none;
+	    }
+            video::-webkit-media-controls-mute-button {
+                display: none;
+            }
+            video::-webkit-media-controls-volume-slider {
+                display: none;
+            }
     </style>
     </head>
     <body>
@@ -14,7 +35,9 @@
     <div style="padding-left: 350px;">
 
     <video id="video" style="width: 600px;" controls>
-        <source id="mp4_src" src="yes.mp4" type="video/mp4">  
+        <source id="mp4_src" src="yes.mp4" type="video/mp4">
+        <!-- <source id="ogg_src"  src="ssni.ogg" type="video/ogg"> -->
+       
     </video>
     <br><br>
     <button onclick="playVideo();" style="cursor: pointer;"><img src="play.png" alt="Play" style="height: 30px; width: 30px;"></button>
@@ -26,6 +49,16 @@
     <button onclick="forwardVideo();" style="cursor: pointer;"><img src="forward.png" alt="Forward" style="height: 30px; width: 30px;"></button>
 
     <button onclick="backwardVideo();" style="cursor: pointer;"><img src="backward.png" alt="Backward" style="height: 30px; width: 30px;"></button>
+	<button onclick="muteVideo();" style="cursor: pointer;"><img src="https://image.shutterstock.com/image-vector/sound-icon-260nw-
+378570244.jpg" style="height: 30px; width: 30px;"></button>
+        
+        <button onclick="rewindVideo();" style="cursor: pointer;"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Rewind_button.svg/1024px-
+Rewind_button.svg.png" style="height: 30px; width: 30px;"></button>
+
+	<button onclick="speedVideo();" style="cursor: pointer;"><img src="https://cdn0.iconfinder.com/data/icons/playback-1/24/speed-2x-
+512.png" alt="Forward" style="height: 30px; width: 30px;"></button>
+        <button onclick="slowVideo();" style="cursor: pointer;"><img src="https://i.ytimg.com/vi/t3Kse8M9fbI/maxresdefault.jpg" alt="Forward" style="height: 30px;
+ width: 30px;"></button>
     </div>
       <script>
         video = document.getElementById("video");
@@ -48,6 +81,16 @@
         function backwardVideo() {
             video.currentTime = video.currentTime -10;
         }
+        function normalVideo(){
+            video.playbackRate = 1.0;
+        }
+	function speedVideo(){
+            video.playbackRate = 2.0;
+        }
+        function slowVideo(){
+            video.playbackRate = 0.25;
+	}
+
     </script>
     </body>
     </html>
