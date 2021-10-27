@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+    <html>
+    <head>
+    <title>Video  Demo </title>
+    <style>
+        button{
+            align-items: center;
+        }
+    </style>
+    </head>
+    <body>
+        <h1 style="text-align: center;">Video Player</h1>
+    <div style="padding-left: 350px;">
+
+    <video id="video" style="width: 600px;" controls>
+        <source id="mp4_src" src="yes.mp4" type="video/mp4">  
+    </video>
+    <br><br>
+    <button onclick="playVideo();" style="cursor: pointer;"><img src="play.png" alt="Play" style="height: 30px; width: 30px;"></button>
+
+    <button onclick="pauseVideo();" style="cursor: pointer;"><img src="pause.png" alt="Pause" style="height: 30px; width: 30px;"></button>
+
+    <!-- <button onclick="rewindVideo();" style="cursor: pointer;">Back to beginning</button> -->
+
+    <button onclick="forwardVideo();" style="cursor: pointer;"><img src="forward.png" alt="Forward" style="height: 30px; width: 30px;"></button>
+
+    <button onclick="backwardVideo();" style="cursor: pointer;"><img src="backward.png" alt="Backward" style="height: 30px; width: 30px;"></button>
+    </div>
+      <script>
+        video = document.getElementById("video");
+
+        function playVideo() {
+        video.play();
+        }
+        function pauseVideo() {
+        video.pause();
+        }
+
+        function rewindVideo() {
+        video.currentTime = 0;
+        }
+
+        function forwardVideo() {
+            video.currentTime = video.currentTime + 10;
+        }
+
+        function backwardVideo() {
+            video.currentTime = video.currentTime -10;
+        }
+    </script>
+    </body>
+    </html>
